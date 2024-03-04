@@ -1,0 +1,121 @@
+// arrays
+
+const arr = [1, 3, -3, 7];
+
+arr.push(25);
+console.log(arr);
+
+arr.forEach((a) => {
+  console.log(a * 2);
+});
+let ar = arr.filter((a) => a % 3 == 0);
+console.log(ar);
+const arr_map = arr.map((a) => a * 3 + 2);
+console.log(arr_map)
+const arr_map_1 = arr.map(value => '<p>' + value + '</p>')
+console.log(arr_map_1)
+
+// destructuring assignement
+const t = [1, 2, 3, 4, 5]
+
+const [first, second, ...rest] = t
+
+/*
+the variables first and second will receive the first two integers of the array as their
+values. The remaining integers are "collected" into an array of their own which is then
+assigned to the variable rest.
+*/
+
+console.log(first, second)
+console.log(rest)
+
+// Objects
+
+/*
+There are a few different ways of defining objects in JavaScript. One very common method
+is using object literals, which happens by listing its properties within braces:
+*/
+
+const object1 = {
+    name: 'Arto Hellas',
+    age: 35,
+    education: 'PhD',
+  }
+  
+  const object2 = {
+    name: 'Full Stack web application development',
+    level: 'intermediate studies',
+    size: 5,
+  }
+  
+  const object3 = {
+    name: {
+      first: 'Dan',
+      last: 'Abramov',
+    },
+    grades: [2, 3, 5, 3],
+    department: 'Stanford University',
+  }
+
+  console.log(object3.name.first, object3.name.last)
+  console.log(object3.grades.slice(2,))
+  console.log(object1.education)
+
+  // add a newproperty to object1
+  object1['status'] = "Single"
+  console.log(object1.status)
+  console.log(object1)
+
+  // Functions
+
+  /*
+  arrow functions. The complete process, without cutting corners, of defining an arrow
+  function is as follows:
+  */
+
+  const sum = (p1, p2) => {
+    console.log(p1)
+    console.log(p2)
+    return p1 + p2
+  }
+
+  // call the function as follows
+  const result = sum(1, 5)
+console.log(result)
+
+/*
+If there is just a single parameter, we can exclude the parentheses from the definition:
+*/
+
+const square = p => {
+    return p * p
+}
+
+const my_square = square(2)
+console.log(my_square)
+
+// older way to declare a function
+function product(a, b) {
+    return a * b
+  }
+  
+const result1 = product(2, 6)
+console.log(result1) // 12
+
+// other way to define the function: function expression
+/*
+no need to give the function a name and the definition may reside among the rest of the
+code
+*/
+
+const average = function(a, b) {
+    return (a + b) / 2
+  }
+  
+ console.log(average(2, 5)) 
+  // result is now 3.5
+
+/*****   During this course, we will define all functions using the arrow syntax.  *****/
+
+// Object methods and "this"
+
